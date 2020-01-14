@@ -2,7 +2,7 @@
 
 另见 https://github.com/lymslive/vim-wenyan
 
-暂时先附在 wenyan-lang 的 vim 插件器。完善后计划将 viml 脚本封装为 linux 下的
+暂时先附在 wenyan-lang 的 vim 插件中。完善后计划将 viml 脚本封装为 linux 下的
 直接可执行脚本，但 window 下仍是只能用插件方式运行。
 
 该插件关于 wson 提供如下几个命令
