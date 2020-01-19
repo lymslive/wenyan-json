@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo "usage: vex {vim-script} [argment list]"
+    exit 1;
+fi
+
+script=$1
+shift
+
+if [[ x$VEXLIB == x ]]; then
+	VEXLIB=$HOME/lib/vex
+fi
+
+export VEXLIB
+exec vim -es -u NONE -c 'set rtp^=$VEXLIB' -S $script -c 'qall!' -- BUFFER.VEX "$@"

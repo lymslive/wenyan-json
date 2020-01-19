@@ -1,9 +1,38 @@
 # wson 之 viml 转码器
 
-另见 https://github.com/lymslive/vim-wenyan
+## 运行需求
 
-暂时先附在 wenyan-lang 的 vim 插件中。完善后计划将 viml 脚本封装为 linux 下的
-直接可执行脚本，但 window 下仍是只能用插件方式运行。
+vim8 或以上。
+
+## 以命令行工具安装
+
+可执行的 vim 脚本只能在 linux 中使用，windows 请用插件方式。
+
+```bash
+./install [$HOME | /usr]
+```
+
+若不指定安装路径前缀 `prefix` 则默认安装在 `$HOME` 家目录下。可执行脚本被安装
+在 `$prefix/bin/` 下，运行时支持脚本安装在 `$prefix/lib/vex/` 目录下。
+
+请确保 `$prefix/bin` 是系统 `$PATH` 路径中，其内的 `vex` 与 `wson-encode.vim`
+与 `wson-decode.vim` 具有可执行权限。
+
+使用方式：
+
+```bash
+$ wson-encode.vim {}
+$ wson-encode.vim path/to/file.json
+$ wson-decode.vim 表也
+$ wson-decode.vim path/to/file.wson
+```
+
+如果直接将文本置于命令行参数，则将结果直接输出至 stdout ，如果参数是文件名，则
+也将结果输出至文件（同名不同后缀），stdout 输出实际保存至的文件名。
+
+## 以 vim 插件方式安装
+
+另见 https://github.com/lymslive/vim-wenyan
 
 该插件关于 wson 提供如下几个命令
 
